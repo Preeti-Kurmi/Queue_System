@@ -4,7 +4,7 @@ const User = require("../models/User");
 module.exports = async (req, res, next) => {
   const token = req.header("Authorization").replace("Bearer ", "");
   try {
-    const decoded = jwt.verify(token, "your_jwt_secret");
+    const decoded = jwt.verify(token, "dhfjksfksdfsdkfs");
     const user = await User.findById(decoded.id);
     if (!user) {
       throw new Error();
